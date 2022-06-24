@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // entorno global creado al iniciar la ejecución. En aplicaiones web el valor de this apunta a window.
+
+        console.log(this);
+
+        function incrementar(a, b) {
+            // entorno de función. Variables que tienen visibilidad dentro de la function
+            return a + b;
+        }
+
+        incrementar(2, 8);
+
+        var a = 2;
+
+        function primerFuncion() {
+            console.log("el valor de a en primer funcion es: ", a);
+        }
+
+        function segundaFunction() {
+            // Un entorno léxico determina cómo y dónde escribimos nuestro código físicamente. 
+            // La variable a esta lexicamente dentro de la funcion segunda funcion.
+            // El lado conceptual de esto podría resumirse que es donde esta puesto un código, 
+            // es decir todo el entorno que rodea donde esta escrito el código.
+            var a = 1;
+            console.log("el valor de a en segunda funcion es: ", a);
+            primerFuncion();
+        }
+
+        segundaFunction();
+
+        prueba();
+
+
+    </script>
+
+</body>
+
+</html>
